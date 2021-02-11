@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model RestaurantsOfProvo.Models.ApplicationResponse
+<!--Page for users to enter a new restaurant-->
+
+<div class="img-container">
+    <!--provo mural image-->
+    <img src="~/img/provo.jpg" width="900" height="350" />
+</div>
+
+<div class="text-center" width="1000">
+    <h4 class="text-black text-center">Enter a Restaurant!</h4>
+
+    <!--Prompts users to enter a restaurant-->
+    <!--Must enter a valid phone number-->
+    <form asp-action="AddRestForm" method="post">
+        <div>
+            <label asp-for="Name">Your Name:</label>
+            <input required asp-for="Name" />
+        </div>
+
+        <div>
+            <label asp-for="RestaurantName">Restaurant Name:</label>
+            <input required asp-for="RestaurantName" />
+        </div>
+
+        <div>
+            <label asp-for="FavDish">Favorite Dish:</label>
+            <input required asp-for="FavDish" />
+        </div>
+
+        <div>
+            <label asp-for="Phone">Restaurant Phone Number:</label>
+            <input required asp-for="Phone" />
+        </div>
+
+        <!--after they click submit if everything entered was valid, the user is sent to a confirmation page-->
+        <button class="rounded text-white text-center" type="submit">Submit Your Restaurant Recommendation</button>
+
+        <div asp-validation-summary="All"></div>
+    </form>
+
+</div>

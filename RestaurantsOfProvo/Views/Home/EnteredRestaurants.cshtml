@@ -1,0 +1,30 @@
+﻿@*
+*@
+@{
+}
+
+@model IEnumerable<RestaurantsOfProvo.Models.ApplicationResponse>
+<!--Displays all the entered restaurants -->
+<div class="text-centered">
+    <h2>Best Places to eat at in Provo!</h2>
+
+    <!--Creates a table with the entered information-->
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Restuarant</th><th>Favorite Dish</th><th>Phone</th></tr>
+        </thead>
+
+        <tbody>
+            <!--Loops through the users suggestions and displays them in the table-->
+            @foreach (RestaurantsOfProvo.Models.ApplicationResponse x in Model)
+            {
+                <tr>
+                    <td>@x.Name</td>
+                    <td>@x.RestaurantName</td>
+                    <td>@x.FavDish</td>
+                    <td>@x.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
